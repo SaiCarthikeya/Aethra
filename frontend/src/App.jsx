@@ -1,6 +1,6 @@
-import Header from "./Header"
-import InputText from "./inputText"
-import Output from "./Output"
+import Header from "./components/Header"
+import InputText from "./components/InputText"
+import Output from "./components/Output"
 function App() {
   return (
     <>
