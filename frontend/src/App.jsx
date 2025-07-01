@@ -1,16 +1,13 @@
 import Header from "./components/Header"
-import InputText from "./components/InputText"
-import Output from "./components/Output"
+import Body from "./components/Body"
+
 function App() {
   return (
-    <>
-      <Header/>
-      <div className="main">
-        <InputText />
-        <Output />
-      </div>
-    </>
-  )
+    <div className="flex flex-col h-dvh box-border">
+      <Header />
+      <Body />
+    </div>
+  );
 }
 
-export default App
+export default App;

@@ -1,40 +1,9 @@
 import React from 'react'
-import "../App.css" 
 
-function Header() {
+const Header = () => {
   return (
-    <div>
-      <header className='header'>
-        <h1 className='title'>Basha Bandu</h1>
-        <nav>
-          <button className = "faq"
-            onMouseOver={e => {
-              e.target.style.background = '#4f8cff';
-              e.target.style.color = '#fff';
-            }}
-            onMouseOut={e => {
-              e.target.style.background = '#fff';
-              e.target.style.color = '#4f8cff';
-            }}
-            onClick={() => window.location.href = '/faq'}
-          >
-            FAQ
-          </button>
-          <button className = "about"
-            onMouseOver={e => {
-              e.target.style.background = '#38e8ff';
-              e.target.style.color = '#fff';
-            }}
-            onMouseOut={e => {
-              e.target.style.background = '#fff';
-              e.target.style.color = '#38e8ff';
-            }}
-            onClick={() => window.location.href = '/about'}
-          >
-            About
-          </button>
-        </nav>
-      </header>
+    <div className="bg-slate-800 p-8 text-center">
+      <h1 className="text-blue-300 text-4xl line tracking-widest font-bold">CHATBOT</h1>
     </div>
   )
 }
