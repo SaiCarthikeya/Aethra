@@ -13,7 +13,7 @@ export const useMessage = () => {
 }
 
 export const MessageProvider = (props) => {
-    const [messages, setMessages] = useState({general: [{role: "user", message: "hello"}, {role: "bot", message: "how you doing"}, {role: "user", message: "hello"}, {role: "bot", message: "how you doing"}], tech: []})
+    const [messages, setMessages] = useState({general: [{role: "assistant", content: "hello"}], tech: []})
     return (
         <MessageContext.Provider value={{messages, setMessages}}>
             {props.children}
