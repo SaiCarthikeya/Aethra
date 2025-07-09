@@ -22,7 +22,7 @@ export default function ModelSelector() {
                   setModel(m.id);
                   setIsOpen(false);
                 }}
-                className="flex justify-between items-center px-4 py-3 hover:bg-gray-600 cursor-pointer rounded"
+                className="flex justify-between items-center px-2 py-3 hover:bg-gray-600 cursor-pointer rounded text-sm"
               >
                 <span>{m.label}</span>
                 <FiInfo
@@ -36,7 +36,7 @@ export default function ModelSelector() {
         )}
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className="w-full px-5 py-4 bg-gray-700 text-gray-200 rounded-xl border border-gray-600 text-left"
+        className="w-full px-2 py-4 bg-gray-700 text-gray-200 rounded-xl text-sm border border-gray-600 text-left"
       >
         {selectedLabel}
       </button>

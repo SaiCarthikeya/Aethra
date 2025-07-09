@@ -68,7 +68,8 @@ export const MessageContext = createContext({
   mode: "general",
   setMode: () => {},
   model: models[0].id,
-  setModel: () => {}
+  setModel: () => {},
+  clearMessages: () => {}
 });
 
 
@@ -83,8 +84,12 @@ export const MessageProvider = (props) => {
     const [messages, setMessages] = useState(defaultMessages);
     const [model, setModel] = useState(models[0].id)
     const [mode, setMode] = useState("general")
+    const clearMessages = () => {
+      console.log("clearing")
+      setMessages((prev) => ({...prev, [mode]: defaultMessages[mode]}));
+    }
     return (
-        <MessageContext.Provider value={{messages, setMessages, mode, setMode, model, setModel}}>
+        <MessageContext.Provider value={{messages, setMessages, mode, setMode, model, setModel, clearMessages}}>
             {props.children}
         </MessageContext.Provider>
     )

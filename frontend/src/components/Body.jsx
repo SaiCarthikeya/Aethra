@@ -56,7 +56,7 @@ const Body = () => {
     };
 
     return (
-        <div className="flex-1 bg-gray-900 p-4 flex justify-end items-center flex-col pb-36">
+        <div className="flex-1 bg-gray-900 p-4 h-[85vh] flex justify-end items-center flex-col pb-12 md:pb-28">
         <Modes />
         <MessagesContainer/>
         {loading && 
@@ -70,7 +70,7 @@ const Body = () => {
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
             placeholder="Type your message..."
-            className="flex-1 w-full sm:w-auto px-5 py-4 text-lg min-h-12 rounded-xl bg-gray-800 text-white placeholder-gray-400 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300 shadow-md
+            className=" w-full sm:w-auto px-5 py-4 text-lg min-h-12 rounded-xl bg-gray-800 text-white placeholder-gray-400 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300 shadow-md
             [&::-webkit-scrollbar]:w-2
             [&::-webkit-scrollbar-track]:rounded-full
             [&::-webkit-scrollbar-track]:bg-neutral-700
@@ -94,6 +94,7 @@ const Body = () => {
             </button>
           )}
         </div>
+        
         </div>
     );
 };
