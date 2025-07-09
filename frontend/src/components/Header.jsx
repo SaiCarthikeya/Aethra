@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <header className="bg-slate-800 py-6 px-4 text-center shadow-md">
+    <header className="bg-slate-800 py-3 px-2 text-center shadow-md md:py-6 md:px-4">
       <h1 className="text-4xl sm:text-5xl font-extrabold text-blue-300 tracking-wide">
         Aethra
       </h1>

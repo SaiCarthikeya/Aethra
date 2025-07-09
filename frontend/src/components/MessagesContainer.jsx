@@ -7,7 +7,7 @@ const MessagesContainer = () => {
   const { messages, mode } = useMessage();
   const cur_messages = messages[mode];
   return (
-    <div className="text-white m-8 flex flex-col w-[80%] h-[500px] overflow-y-auto rounded-lg p-2
+    <div className="text-white m-8 flex flex-col w-[80%] h-[200px] md:h-[200px] overflow-y-auto rounded-lg p-2
     [&::-webkit-scrollbar]:w-2
     [&::-webkit-scrollbar-track]:rounded-full
     [&::-webkit-scrollbar-track]:bg-neutral-700
