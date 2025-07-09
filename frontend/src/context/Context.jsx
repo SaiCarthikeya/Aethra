@@ -7,6 +7,34 @@ export const modes = {
   mentalHealthCompanion: "Mental Health Companion"
 };
 
+export const models = [
+  {
+    id: "llama-3.3-70b-versatile",
+    label: "LLaMA 3.3 70B Versatile",
+    vendor: "Meta",
+    trainContextLength: 131072,
+    inferContextLength: 32768,
+    description: "Balanced, general-purpose model"
+  },
+  {
+    id: "gemma2-9b-it",
+    label: "Gemma 2 9B Instruct",
+    vendor: "Google",
+    trainContextLength: 8192,
+    inferContextLength: 8192,
+    description: "Lightweight, instruction-tuned"
+  },
+  {
+    id: "llama-3.1-8b-instant",
+    label: "LLaMA 3.1 8B Instant",
+    vendor: "Meta",
+    trainContextLength: 131072,
+    inferContextLength: 131072,
+    description: "Instant inference with long context"
+  }
+];
+
+
 const defaultMessages = {
   general: [
     {
@@ -39,6 +67,8 @@ export const MessageContext = createContext({
   setMessages: () => {},
   mode: "general",
   setMode: () => {},
+  model: models[0].id,
+  setModel: () => {}
 });
 
 
@@ -50,10 +80,11 @@ export const useMessage = () => {
 }
 
 export const MessageProvider = (props) => {
-     const [messages, setMessages] = useState(defaultMessages);
+    const [messages, setMessages] = useState(defaultMessages);
+    const [model, setModel] = useState(models[0].id)
     const [mode, setMode] = useState("general")
     return (
-        <MessageContext.Provider value={{messages, setMessages, mode, setMode}}>
+        <MessageContext.Provider value={{messages, setMessages, mode, setMode, model, setModel}}>
             {props.children}
         </MessageContext.Provider>
     )

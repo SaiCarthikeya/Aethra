@@ -1,7 +1,7 @@
 
 import React from "react";
-import { useMessage } from "../context/Messages";
-import { modes } from "../context/Messages"
+import { useMessage } from "../context/Context";
+import { modes } from "../context/Context"
 
 const Mode = () => {
   const { mode, setMode } = useMessage();

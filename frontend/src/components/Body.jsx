@@ -2,17 +2,18 @@ import { useState } from "react";
 import { IoSend } from "react-icons/io5";
 import SyncLoader from 'react-spinners/SyncLoader';
 import DotLoader from 'react-spinners/DotLoader';
-import { useMessage } from "../context/Messages";
+import { useMessage } from "../context/Context";
+import Models from "./Models"
 import MessagesContainer from "./MessagesContainer";
 import Modes from "./Modes";
+import { toast } from "react-toastify";
+
 
 const Body = () => {
       const [inputText, setInputText] = useState("");
-      const { messages, setMessages, mode } = useMessage(); 
+      const { messages, setMessages, mode, model } = useMessage(); 
       const [loading, setLoading] = useState(false);
-      const [selectedLanguage, setSelectedLanguage] = useState("en");
       // console.log(messages)
-      // console.log(messages);
       const mode_messages = messages[mode];
       console.log(mode_messages[0])
       const sendMessage = async () => {
@@ -25,6 +26,7 @@ const Body = () => {
             body: JSON.stringify({
               history: mode_messages,
               content: inputText,
+              model,
               role: "user"
             }),
           });
@@ -41,10 +43,11 @@ const Body = () => {
             { role: "assistant", content: data.reply },
           ],
         }));
-          setInputText("");
-        } catch (error) {
+      } catch (error) {
+          toast.error("We couldn't process your request. Please try again. Error: " + error.message);
           console.error("Failed to send message:", error);
-        } finally {
+      } finally {
+          setInputText("");
           setLoading(false);
         }
 
@@ -52,24 +55,13 @@ const Body = () => {
 
     return (
         <div className="flex-1 bg-gray-900 p-4 flex justify-end items-center flex-col pb-36">
-        <Modes />
         <MessagesContainer/>
         {loading && 
         <SyncLoader className="p-8" color="#4a90e2" size={15} loading={loading} />
-        }
+      }
          <div className="w-full max-w-2xl mt-4 flex flex-col sm:flex-row items-center gap-2 transition-transform duration-200 hover:scale-105">
-          <select
-            value={selectedLanguage}
-            onChange={(e) => setSelectedLanguage(e.target.value)}
-            className="w-full sm:w-auto px-5 py-4 text-lg bg-gray-700 text-gray-200 rounded-xl border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300 shadow-md cursor-pointer"
-          >
-                  <option value="en">English</option>
-                  <option value="hi">Hindi</option>
-                  <option value="ta">Tamil</option>
-                  <option value="te">Telugu</option>
-                  <option value="kn">Kannada</option>
-                  <option value="ml">Malayalam</option>
-          </select>
+         <Models />
+
 
           <textarea
             value={inputText}

@@ -10,7 +10,7 @@ app.use(express.json());
 
 app.post("/chat", async (req, res) => {
   try {
-    let { history, content, role } = req.body;
+    let { history, content, role, model } = req.body;
 
     if (!content) {
       return res.status(400).json({ error: "content is required" });
@@ -19,7 +19,7 @@ app.post("/chat", async (req, res) => {
     console.log(history)
 
     // Append new user message and get completion
-    const response = await getGroqChatCompletion(history, role, content);
+    const response = await getGroqChatCompletion(history, role, content, model);
 
     const assistantReply = response.choices[0]?.message?.content || "";
 

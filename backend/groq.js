@@ -4,7 +4,7 @@ dotenv.config();
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 
-export async function getGroqChatCompletion(history, role, content) {
+export async function getGroqChatCompletion(history, role, content, model) {
     return groq.chat.completions.create({
         messages: [
             ...history,
@@ -13,7 +13,7 @@ export async function getGroqChatCompletion(history, role, content) {
                 content: content,
             },
         ],
-        model: "llama-3.3-70b-versatile",
+        model,
     });
 }
 
