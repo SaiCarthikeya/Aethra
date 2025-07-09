@@ -15,12 +15,14 @@ const Body = () => {
       const [loading, setLoading] = useState(false);
       // console.log(messages)
       const mode_messages = messages[mode];
-      console.log(mode_messages[0])
+      // console.log(mode_messages[0])
       const sendMessage = async () => {
         if (inputText.trim() === "") return;
         setLoading(true);
+        const URL =  import.meta.env.VITE_URL + "/chat"
+        console.log(URL)
         try {
-          const response = await fetch("http://localhost:5000/chat", {
+          const response = await fetch(URL, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({

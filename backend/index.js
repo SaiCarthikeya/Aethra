@@ -1,7 +1,7 @@
 import express from "express";
 import cors from 'cors';
 import { getGroqChatCompletion } from "./groq.js";
-const port = 5000;
+const port = process.env.PORT || 5000;
 const app = express();
 
 app.use(cors());
