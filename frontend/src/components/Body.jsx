@@ -12,41 +12,41 @@ const Body = () => {
       const [loading, setLoading] = useState(false);
       const [selectedLanguage, setSelectedLanguage] = useState("en");
       // console.log(messages)
-      console.log(messages);
+      // console.log(messages);
       const mode_messages = messages[mode];
-      console.log(mode_messages)
+      console.log(mode_messages[0])
       const sendMessage = async () => {
-      if (inputText.trim() === "") return;
-      setLoading(true);
-      try {
-        const response = await fetch("http://localhost:5000/chat", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            history: mode_messages,
-            content: inputText,
-            role: "user"
-          }),
-        });
+        if (inputText.trim() === "") return;
+        setLoading(true);
+        try {
+          const response = await fetch("http://localhost:5000/chat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              history: mode_messages,
+              content: inputText,
+              role: "user"
+            }),
+          });
 
-        if (!response.ok) throw new Error("API error");
+          if (!response.ok) throw new Error("API error");
 
-        const data = await response.json();
+          const data = await response.json();
 
-      setMessages((prev) => ({
-        ...prev,
-        [mode]: [
-          ...(prev[mode] || []),
-          { role: "user", content: inputText },
-          { role: "assistant", content: data.reply },
-        ],
-      }));
-        setInputText("");
-      } catch (error) {
-        console.error("Failed to send message:", error);
-      } finally {
-        setLoading(false);
-      }
+        setMessages((prev) => ({
+          ...prev,
+          [mode]: [
+            ...(prev[mode] || []),
+            { role: "user", content: inputText },
+            { role: "assistant", content: data.reply },
+          ],
+        }));
+          setInputText("");
+        } catch (error) {
+          console.error("Failed to send message:", error);
+        } finally {
+          setLoading(false);
+        }
 
     };
 

@@ -22,6 +22,7 @@ const MessagesContainer = () => {
   </div>
 ) : (
   cur_messages.map((message, idx) => (
+    message.role !== "system" &&
     <Message message={message.content} role={message.role} key={idx} />
   ))
 )}

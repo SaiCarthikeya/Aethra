@@ -16,16 +16,7 @@ app.post("/chat", async (req, res) => {
       return res.status(400).json({ error: "content is required" });
     }
 
-    if (!Array.isArray(history)) {
-      history = [];
-    }
-
-    if (history.length === 0) {
-      history.push({
-        role: "system",
-        content: "You are a helpful assistant.",
-      });
-    }
+    console.log(history)
 
     // Append new user message and get completion
     const response = await getGroqChatCompletion(history, role, content);
