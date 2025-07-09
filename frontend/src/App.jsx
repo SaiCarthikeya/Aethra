@@ -5,12 +5,10 @@ import Body from "./components/Body"
 import { MessageProvider } from "./context/Context";
 function App() {
   return (
-    <div className="flex flex-col h-dvh box-border overflow-hidden">
+    <div className="flex flex-col h-dvh box-border overflow-hidden m-0 p-0">
     <MessageProvider>
       <Header />
-      <div className="flex-1 overflow-y-auto">
-        <Body />
-      </div>
+      <Body />
     </MessageProvider>
     <ToastContainer position="bottom-right" />
   </div>

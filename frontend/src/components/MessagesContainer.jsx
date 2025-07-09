@@ -9,7 +9,7 @@ const MessagesContainer = () => {
   const cur_messages = messages[mode];
   return (
     <>
-    <div className="text-white m-8 flex flex-col w-[80%] h-[200px] md:h-[500px] overflow-y-auto rounded-lg p-2
+    <div className="text-white md:m-8 flex flex-col w-[80%] h-[100%] overflow-y-auto rounded-lg p-2
     [&::-webkit-scrollbar]:w-2
     [&::-webkit-scrollbar-track]:rounded-full
     [&::-webkit-scrollbar-track]:bg-neutral-700
@@ -33,7 +33,7 @@ const MessagesContainer = () => {
     }
     </div>
     {cur_messages.length > 1 && (
-    <span className="ml-auto mr-4 md:mr-12 border-red-500 md:border-2 md:border-solid rounded-lg md:p-3 hover:bg-red-200 text-4xl text-[#ff3366]" onClick={() => clearMessages()}>
+    <span className="ml-auto mr-4 mb-0 md:mr-12 border-red-500 md:border-2 md:border-solid rounded-lg md:p-3 hover:bg-red-200 text-4xl text-[#ff3366]" onClick={() => clearMessages()}>
       <MdDeleteForever />
     </span>
   )}

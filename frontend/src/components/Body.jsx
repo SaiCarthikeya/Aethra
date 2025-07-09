@@ -56,13 +56,13 @@ const Body = () => {
     };
 
     return (
-        <div className="flex-1 bg-gray-900 p-4 h-[85vh] flex justify-end items-center flex-col pb-12 md:pb-28">
+        <div className="flex-1 bg-gray-900 md:p-4 min-h-[85vh] flex items-center flex-col">
         <Modes />
         <MessagesContainer/>
         {loading && 
         <SyncLoader className="p-8" color="#4a90e2" size={15} loading={loading} />
       }
-         <div className="w-full max-w-2xl mt-4 flex flex-col sm:flex-row items-center gap-2 transition-transform duration-200 hover:scale-105">
+         <div className="w-full max-w-2xl flex flex-row items-center gap-2 mt-auto pb-1 md:pb-6 transition-transform duration-200 hover:scale-103">
          <Models />
 
 
