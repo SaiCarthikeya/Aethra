@@ -62,39 +62,36 @@ const Body = () => {
         {loading && 
         <SyncLoader className="p-8" color="#4a90e2" size={15} loading={loading} />
       }
-         <div className="w-full max-w-2xl flex flex-row items-center gap-2 mt-auto pb-1 md:pb-6 transition-transform duration-200 hover:scale-103">
-         <Models />
+         <div className="w-full max-w-2xl flex flex-row items-center gap-2 pb-1 md:pb-6 transition-transform duration-200 hover:scale-103">
+          <Models />
+            <textarea
+              value={inputText}
+              onChange={(e) => setInputText(e.target.value)}
+              placeholder="Type your message..."
+              className=" w-full sm:w-auto px-5 py-4 text-lg min-h-12 rounded-xl bg-gray-800 text-white placeholder-gray-400 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300 shadow-md
+              [&::-webkit-scrollbar]:w-2
+              [&::-webkit-scrollbar-track]:rounded-full
+              [&::-webkit-scrollbar-track]:bg-neutral-700
+              [&::-webkit-scrollbar-thumb]:rounded-full
+              [&::-webkit-scrollbar-thumb]:bg-neutral-500"
+            />
 
-
-          <textarea
-            value={inputText}
-            onChange={(e) => setInputText(e.target.value)}
-            placeholder="Type your message..."
-            className=" w-full sm:w-auto px-5 py-4 text-lg min-h-12 rounded-xl bg-gray-800 text-white placeholder-gray-400 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300 shadow-md
-            [&::-webkit-scrollbar]:w-2
-            [&::-webkit-scrollbar-track]:rounded-full
-            [&::-webkit-scrollbar-track]:bg-neutral-700
-            [&::-webkit-scrollbar-thumb]:rounded-full
-            [&::-webkit-scrollbar-thumb]:bg-neutral-500"
-          />
-
-          {loading ? (
-            <button
-              disabled
-              className="px-5 py-4 text-lg bg-gray-700 text-gray-200 rounded-xl hover:bg-gray-600 active:scale-95 transition-all duration-200 shadow-md flex items-center justify-center"
-            >
-              <DotLoader color="#4a90e2" size={30} loading={loading} />
-            </button>
-          ) : (
-            <button
-              onClick={sendMessage}
-              className="px-5 py-4 text-lg bg-gray-700 text-gray-200 rounded-xl hover:bg-gray-600 active:scale-95 transition-all duration-200 shadow-md flex items-center justify-center"
-            >
-              <IoSend size={30} />
-            </button>
-          )}
-        </div>
-        
+            {loading ? (
+              <button
+                disabled
+                className="px-5 py-4 text-lg bg-gray-700 text-gray-200 rounded-xl hover:bg-gray-600 active:scale-95 transition-all duration-200 shadow-md flex items-center justify-center"
+              >
+                <DotLoader color="#4a90e2" size={30} loading={loading} />
+              </button>
+            ) : (
+              <button
+                onClick={sendMessage}
+                className="px-5 py-4 text-lg bg-gray-700 text-gray-200 rounded-xl hover:bg-gray-600 active:scale-95 transition-all duration-200 shadow-md flex items-center justify-center"
+              >
+                <IoSend size={30} />
+              </button>
+            )}
+          </div>  
         </div>
     );
 };
