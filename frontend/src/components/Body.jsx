@@ -62,7 +62,7 @@ const Body = () => {
         {loading && 
         <SyncLoader className="p-8" color="#4a90e2" size={15} loading={loading} />
       }
-         <div className="w-full max-w-2xl flex flex-row items-center gap-2 pb-1 md:pb-6 transition-transform duration-200 hover:scale-103">
+         <div className="w-full max-w-2xl flex flex-row items-center gap-2 mb-28 md:pb-6 transition-transform duration-200 hover:scale-103">
           <Models />
             <textarea
               value={inputText}
