@@ -1,11 +1,14 @@
-import React from 'react'
-
 const Header = () => {
   return (
-    <div className="bg-slate-800 p-8 text-center">
-      <h1 className="text-blue-300 text-4xl line tracking-widest font-bold">CHATBOT</h1>
-    </div>
-  )
-}
+    <header className="bg-slate-800 py-6 px-4 text-center shadow-md">
+      <h1 className="text-4xl sm:text-5xl font-extrabold text-blue-300 tracking-wide">
+        Aethra
+      </h1>
+      <p className="text-gray-400 mt-2 text-sm sm:text-base tracking-wider">
+        Your adaptable AI companion
+      </p>
+    </header>
+  );
+};
 
 export default Header

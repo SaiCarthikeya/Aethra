@@ -13,6 +13,27 @@ export default function ModelSelector() {
 
   return (
     <div className="relative inline-block w-64">
+        {isOpen && (
+          <ul className="absolute left-0 w-full bg-gray-800 text-white shadow-lg rounded-xl mb-2 z-10">
+            {models.map((m) => (
+              <li
+                key={m.id}
+                onClick={() => {
+                  setModel(m.id);
+                  setIsOpen(false);
+                }}
+                className="flex justify-between items-center px-4 py-3 hover:bg-gray-600 cursor-pointer rounded"
+              >
+                <span>{m.label}</span>
+                <FiInfo
+                  title={m.description}
+                  className="text-blue-400 ml-2 cursor-help"
+                  onClick={() => describeModel(m.description)}
+                />
+              </li>
+            ))}
+          </ul>
+        )}
       <button
         onClick={() => setIsOpen((prev) => !prev)}
         className="w-full px-5 py-4 bg-gray-700 text-gray-200 rounded-xl border border-gray-600 text-left"
@@ -20,27 +41,6 @@ export default function ModelSelector() {
         {selectedLabel}
       </button>
 
-      {isOpen && (
-        <ul className="absolute left-0 w-full bg-gray-800 text-white shadow-lg rounded-xl mt-2 z-10">
-          {models.map((m) => (
-            <li
-              key={m.id}
-              onClick={() => {
-                setModel(m.id);
-                setIsOpen(false);
-              }}
-              className="flex justify-between items-center px-4 py-3 hover:bg-gray-600 cursor-pointer rounded"
-            >
-              <span>{m.label}</span>
-              <FiInfo
-                title={m.description}
-                className="text-blue-400 ml-2 cursor-help"
-                onClick={() => describeModel(m.description)}
-              />
-            </li>
-          ))}
-        </ul>
-      )}
     </div>
   );
 }

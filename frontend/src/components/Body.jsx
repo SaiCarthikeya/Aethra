@@ -55,6 +55,7 @@ const Body = () => {
 
     return (
         <div className="flex-1 bg-gray-900 p-4 flex justify-end items-center flex-col pb-36">
+        <Modes />
         <MessagesContainer/>
         {loading && 
         <SyncLoader className="p-8" color="#4a90e2" size={15} loading={loading} />
