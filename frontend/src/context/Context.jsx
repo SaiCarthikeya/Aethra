@@ -1,10 +1,12 @@
 import { createContext, useContext, useState } from "react";
 
 export const modes = {
+  dummy1: "Dummy",
   general: "General",
   medicalDiagnoser: "Medical Diagnoser",
   fitnessCoach: "Fitness Coach",
-  mentalHealthCompanion: "Mental Health Companion"
+  mentalHealthCompanion: "Mental Health Companion",
+  dummy2: "Dummy"
 };
 
 export const models = [
