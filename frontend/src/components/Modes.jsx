@@ -7,7 +7,7 @@ const Mode = () => {
   const { mode, setMode } = useMessage();
 
   return (
-    <div className="flex flex-row flex-wrap self-center ml-[10%] md:ml-1">
+    <div className="flex flex-row flex-wrap self-center ml-[10%] md:ml-1 mt-2">
     {Object.entries(modes).map(([key, label]) => (
       <button
         key={key}

@@ -12,7 +12,7 @@ export default function ModelSelector() {
   }
 
   return (
-    <div className="relative inline-block w-64">
+    <div className="relative inline-block w-64 overflow-y-auto md:overflow-y-visible">
         {isOpen && (
           <ul className="absolute left-0 w-full bg-gray-800 text-white shadow-lg rounded-xl mb-2 z-10">
             {models.map((m) => (

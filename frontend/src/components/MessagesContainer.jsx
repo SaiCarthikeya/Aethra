@@ -9,7 +9,7 @@ const MessagesContainer = () => {
   const cur_messages = messages[mode];
   return (
     <>
-    <div className="text-white md:m-8 flex flex-col w-[80%] h-[100%] overflow-y-auto rounded-lg p-2
+    <div className="text-white md:m-8 flex flex-col w-[90%] h-[100%] overflow-y-auto rounded-lg p-2
     [&::-webkit-scrollbar]:w-2
     [&::-webkit-scrollbar-track]:rounded-full
     [&::-webkit-scrollbar-track]:bg-neutral-700

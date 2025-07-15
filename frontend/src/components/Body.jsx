@@ -56,13 +56,13 @@ const Body = () => {
     };
 
     return (
-        <div className="flex-1 bg-gray-900 md:p-4 min-h-[85vh] flex items-center flex-col">
+        <div className="flex-1 bg-gray-900 md:p-4 min-h-[90vh] flex items-center flex-col">
         <Modes />
         <MessagesContainer/>
         {loading && 
         <SyncLoader className="p-8" color="#4a90e2" size={15} loading={loading} />
       }
-         <div className="w-full max-w-2xl flex flex-row items-center gap-2 mb-28 md:pb-6 transition-transform duration-200 hover:scale-103">
+         <div className="w-full max-w-2xl flex flex-row items-center gap-2 mb-28 px-2 md:pb-6 transition-transform duration-200 hover:scale-103">
           <Models />
             <textarea
               value={inputText}
